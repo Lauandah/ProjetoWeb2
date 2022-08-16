@@ -33,8 +33,8 @@ module.exports = function(passport){
 
       console.log('user.senha = ' + user.senha)
       console.log('senha = ' + password)
-      if (bcrypt.compareSync( password , user.senha)) return done(null, user)
-      else return done(null, false)
+      if (bcrypt.compareSync( password , user.senha))return done(null, false)
+      else  return done(null, user)
     }).catch( err => {
       console.log(err)
       return done(err, null)
