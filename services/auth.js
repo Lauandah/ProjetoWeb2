@@ -10,7 +10,7 @@ module.exports = function(passport){
         done(null, user.id)
     })
     passport.deserializeUser(function(id, done){
-    dao.findById(id)
+    dao.findById2(id)
     .then( ([rows]) => {
       let user = rows[0]
       return done(null, user)

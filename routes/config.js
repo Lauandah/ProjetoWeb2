@@ -1,8 +1,9 @@
 module.exports = function(app){
 
-    var indexRouter = require('./index');
+    /*var indexRouter = require('./index');*/
     var usersRouter = require('./users');
     var loginRouter = require('./login');
+    var funcionariosRouter = require('./funcionarios');
 
     let middlewareAutorization = function (req, resp, next){
         
@@ -14,6 +15,7 @@ module.exports = function(app){
 
     app.use('/', loginRouter);
     app.use('/users', middlewareAutorization, usersRouter);
-    app.use('/index', indexRouter );
+    /*app.use('/index', indexRouter );*/
+    app.use('/funcionarios', funcionariosRouter);
 
 }
